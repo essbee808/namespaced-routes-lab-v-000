@@ -18,6 +18,10 @@ class Admin::PreferencesController < ApplicationController
     end
   end
 
+  def show
+    @preference = Preference.find([:id])
+  end
+
   def preference_params
     params.require(:preference).permit(:allow_create_songs, :allow_create_artists)
   end
